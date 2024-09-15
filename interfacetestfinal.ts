@@ -12,10 +12,16 @@ class uiClass implements interface11{
 
 //impl inteface through json
 
-let obj11:interface11={
+let obj111:interface11={
     techname: 'react'
 }
 
-let obj11:interface11={
+let obj112:interface11={
     techname: "spring"
 }
+
+console.log('class level',new uiClass().techname);
+
+
+console.log('json impl',obj111.techname);
+console.log('json impl',obj112.techname);
