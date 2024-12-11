@@ -8,6 +8,6 @@ export class UserService {
 
   constructor() { }
   getUser(): Observable<any>{
-      return of({name:"gp",email:"xyz@xyz.com"});
+      return of({name:"gp",email:"xyz@xyz.com"})
   }
 }
