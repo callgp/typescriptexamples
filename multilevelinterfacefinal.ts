@@ -10,3 +10,11 @@ interface backInterface extends uiInterface{
 interface dbInterface extends backInterface{
     tech_three:string;
 }
+
+
+let obj:dbInterface={
+
+    tech_one='ang',
+    tech_two='spring',
+    tech_three='orcl'
+}
