@@ -14,5 +14,13 @@ export class AppComponent {
   constructor(){}
   private userService = inject(UserService);
   user=this.userService.getUser();
- 
+  title = "this is the Title Property";
+  userData = {
+    id: 1,
+    name: 'Umair Jameel',
+    roles: ['Admin', 'User'],
+    status: {
+      active: true,
+      lastLogin: new Date(2024, 3, 14),
+    }};
 }
