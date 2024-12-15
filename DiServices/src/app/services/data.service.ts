@@ -13,8 +13,8 @@ constructor(private http: HttpClient) { }
     return ['data 1','data 2','data 3']
   }
 
-  getPosts():Observable<Data>{
-    return this.http.get<Data>(this.apiUrl);
+   // Fetch posts (array of Data)
+   getPosts(): Observable<Data[]> {
+    return this.http.get<Data[]>(this.apiUrl);
   }
-
 }

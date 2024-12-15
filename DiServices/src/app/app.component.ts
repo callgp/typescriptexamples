@@ -1,34 +1,33 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DataService } from './services/data.service';
 import { Data } from './interfaces/data';
 import { NgFor } from '@angular/common';
-import { error } from 'console';
+
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NgFor],
-  providers:[DataService],
+  providers: [DataService],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: './app.component.scss',
 })
 export class AppComponent {
-  data:string[]=[];
+  data: string[] = [];
+  posts: Data[] = [];
 
-  posts:Data[]=[]
-  constructor(private dataService : DataService){
-    this.data=this.dataService.getData();
-
+  constructor(private dataService: DataService) {
+    this.data = this.dataService.getData();
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.dataService.getPosts().subscribe({
-      next: (response:Data[])=>{
-        this.posts=response;
+      next: (response: Data[]) => {
+        this.posts = response; // Works as expected with corrected type
       },
-     error: (error:Error)=>{
-      console.log(error);
-     }   
-   })
- }
+      error: (error: Error) => {
+        console.error('Error fetching posts:', error);
+      },
+    });
+  }
 }
