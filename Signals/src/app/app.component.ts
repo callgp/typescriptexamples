@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,effect } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {signal,computed} from '@angular/core'
 import { Todo } from './interfaces/todo';
@@ -19,13 +19,15 @@ export class AppComponent {
 
 total=computed(()=>this.todos().length)
 
-constructor(){
-effect(()=>{
-  const items=this.todos().length;
-  const even=items%2==0;
-  console.log(`Items are: ${even ? 'Even' : 'Odd'}`);
+constructor() {
+  effect(() => {
+    const items = this.todos().length;
+    const even = items % 2 == 0;
+    console.log(`Items are: ${even ? 'Even' : 'Odd'}`);
+    // we can use it to call apis
+  });
+}
 
-});
 
 }
   ngOnit(){
