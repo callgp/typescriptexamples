@@ -23,9 +23,9 @@ constructor(){
 effect(()=>{
   const items=this.todos().length;
   const even=items%2==0;
-  console.log('Items are:${even ? 'Even':'Odd'}');
+  console.log(`Items are: ${even ? 'Even' : 'Odd'}`);
 
-})
+});
 
 }
   ngOnit(){
