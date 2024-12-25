@@ -19,13 +19,13 @@
         <input type="email" 
         id="email"
         name="name"
-         [(ngModel)]="user.name"
+         [(ngModel)]="user.email"
           required />
    </div>
 
 
    <div>
-  <button type="submit">Submit</button>
+  <button type="submit" [disabled]="userForm.invalid || !validateEmail()">Submit</button>
 </div>
 
     </form>

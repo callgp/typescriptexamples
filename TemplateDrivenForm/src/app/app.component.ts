@@ -11,7 +11,7 @@ interface User{
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -30,5 +30,11 @@ export class AppComponent {
     if(form.valid){
       console.log(form.value,this.user)
     }
+  }
+
+
+  validateEmail():boolean{
+    const emailRegex= /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/  ;
+    return emailRegex.test(this.user.email);
   }
 }
